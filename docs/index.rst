@@ -26,9 +26,9 @@ Features
 
 Installation
 ------------
-Before installation, make sure that you have ``Django <https://www.djangoproject.com/>`` installed.
+Before installation, make sure that you have `Django <https://www.djangoproject.com/>` installed.
 
-The easiest way is to use ``pip<https://pypi.python.org/pypi/pip>`` install
+The easiest way is to use `pip<https://pypi.python.org/pypi/pip>` install
 
 Install register_activate by running:
 
