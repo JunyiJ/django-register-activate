@@ -36,11 +36,11 @@ Configuration
 ------------
 1. In your setting.py, import the module register_activate like this::
 
-   ``import register_activate``
+   import register_activate
 
 2. In your setting.py, get the absolut path the register_activate_dir (following BASE_DIR) like this::
 
-   ``register_activate_dir=os.path.dirname(os.path.dirname(os.path.abspath(register_activate.__file__)))``
+   register_activate_dir=os.path.dirname(os.path.dirname(os.path.abspath(register_activate.__file__)))
     
 3. In your setting.py, add "register_activate" to your INSTALLED_APPS setting like this::
 
@@ -52,39 +52,39 @@ Configuration
     
 4. In your setting.py, add the template path of register_activate to TEMPLATES by updating 'DIRS' like this::
 
-    ``TEMPLATES = [
+   TEMPLATES = [
         {
-         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-         'DIRS': [os.path.join(register_activate_dir,'register_activate/templates/register_activate')],
-         'APP_DIRS': True,
-         'OPTIONS': {
-             'context_processors': [
-                 'django.template.context_processors.debug',
-                 'django.template.context_processors.request',
-                 'django.contrib.auth.context_processors.auth',
-                 'django.contrib.messages.context_processors.messages',
-             ],
-         },
+            'BACKEND': 'django.template.backends.django.DjangoTemplates',
+            'DIRS': [os.path.join(register_activate_dir,'register_activate/templates/register_activate')],
+            'APP_DIRS': True,
+            'OPTIONS': {
+                'context_processors': [
+                    'django.template.context_processors.debug',
+                    'django.template.context_processors.request',
+                    'django.contrib.auth.context_processors.auth',
+                    'django.contrib.messages.context_processors.messages',
+                ],
+            },
         },
-    ]``
+   ]
 
 5. In your setting.py, add the AUTHENTICATION_BACKENDS setting like this::
 
-    ``AUTHENTICATION_BACKENDS=[
+    AUTHENTICATION_BACKENDS=[
        'django.contrib.auth.backends.ModelBackend',
        'register_activate.email_auth.EmailBackend',
-    ]``
+    ]
 
 
 6. In your project urls.py, include the polls URLconf like this::
 
-    ``from django.conf.urls import url, include
+    from django.conf.urls import url, include
     from django.contrib import admin
     urlpatterns = [
        ...
        url(r'^register_activate/',include('register_activate.urls')),
        url(r'^admin/', admin.site.urls),
-   ]``
+   ]
    
 
 7. Run ``python manage.py migrate`` to create the models.
