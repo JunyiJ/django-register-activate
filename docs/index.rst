@@ -44,12 +44,11 @@ Configuration
     
 3. In your setting.py, add "register_activate" to your INSTALLED_APPS setting like this::
 
-    .. code-block:: python
     
-    ``INSTALLED_APPS = [
+    INSTALLED_APPS = [
         ...
         'register_activate',
-    ]``
+    ]
     
 4. In your setting.py, add the template path of register_activate to TEMPLATES by updating 'DIRS' like this::
 
