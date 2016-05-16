@@ -11,7 +11,7 @@ Welcome to register_activate's documentation!
 
 *Register_activate* is a simple, user-friendly django application for user sign up, email 
 account verification and activation, login and logout. It 
-is based on django' user model but have certain advantages
+is based on Django' user model but have certain advantages
 over the django user model: 
 
 
@@ -26,9 +26,9 @@ Features
 
 Installation
 ------------
-Before installation, make sure that you have `Django <https://www.djangoproject.com/>` installed.
+Before installation, make sure that you have `Django <https://www.djangoproject.com/>`_- installed.
 
-The easiest way is to use `pip<https://pypi.python.org/pypi/pip>` install
+The easiest way is to use `pip<https://pypi.python.org/pypi/pip>`_- install
 
 Install register_activate by running:
 
