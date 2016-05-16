@@ -44,6 +44,8 @@ Configuration
     
 3. In your setting.py, add "register_activate" to your INSTALLED_APPS setting like this::
 
+    .. code-block:: python
+    
     ``INSTALLED_APPS = [
         ...
         'register_activate',
