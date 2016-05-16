@@ -11,32 +11,34 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-$project will provide a django app for user sign up, email
+Register_activate will provide a django app for user sign up, email 
 account verification and activation, login and logout. It 
 is based on django' user model but have certain advantages
-than the user model: 
+over the django user model: 
 
-Look how easy it is to use:
 
-    import project
-    # Get your stuff done
-    project.do_stuff()
 
 Features
 --------
--Register_activate provides a complete user signup form, with username, password
- and email.
--Register_activate provides functions for password verification, user authentication,
- and email verification and activation. 
--'Email' field  a requried field for registration. 
--Register_activate provides a clear and comfortable user-interface.
+- Register_activate provides a complete user signup form, with username, password and email.
+- Register_activate provides functions for password verification, user authentication and email verification and activation. 
+- In register_activate, email becomes a requried field for registration. 
+- Register_activate provides a clear and comfortable user-interface.
+- Easy to use once you updated your project settings.py and urls.py
 
 Installation
 ------------
+Before installation, make sure that you have django installed already.
 
-Install $project by running:
+* Django: https://www.djangoproject.com/
 
-    install project
+The easiest way is to use pip install
+
+* Pip: https://pypi.python.org/pypi/pip
+
+Install register_activate by running:
+
+    pip install register_activate
 
 Contribute
 ----------
