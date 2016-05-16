@@ -6,7 +6,6 @@ from django.contrib.auth.models import User
 from datetime import *
 import urllib2
 from xml.dom import minidom
-# Create your views here.
 from .forms import SignupForm, SigninForm
 from django.db.models import Count
 import smtplib
@@ -18,17 +17,6 @@ fromaddr='django.registeractivate@gmail.com'
 username='django.registeractivate'
 password='django_register_activate'
 
-@login_required(login_url='/register_activate/signin/')
-def mainpage(request):
-	if request.method == 'GET':
-		message="You are logged in successfully"
-		return render(request,'mainpage.html',{'user':request.user,'message':message})
-	elif request.method =='POST':
-		if request.POST.get("logout"):
-			return redirect('register_activate:logout')
-		else:
-			return redirect('register_activate:thankyou')
-			
 
 def sign_up(request):
 	if request.method == 'POST':
@@ -71,9 +59,9 @@ def sign_in(request):
 				if user.is_active:											#Make sure the account is activated
 					login(request,user)
 					return redirect('register_activate:main')
-					#return render(request,'mainpage.html',{'username':username})
+		
 				else:
-					return render(request,'ErrorPage.html',{'errormessage':'Disabled account'})
+					return render(request,'ErrorPage.html')
 			else:
 				return render(request,'ErrorPage.html',{'errormessage':'Invalid login'})
 		else:
@@ -83,26 +71,29 @@ def sign_in(request):
 		return render(request,'sign_in.html',{'form':form})
 
 
-
+@login_required(login_url='/register_activate/signin/')
+def mainpage(request):
+	if request.method == 'GET':
+		message="You are logged in successfully"
+		return render(request,'mainpage.html',{'user':request.user,'message':message})
+	elif request.method =='POST':
+		if request.POST.get("logout"):
+			return redirect('register_activate:logout')
+		else:
+			return redirect('register_activate:thankyou')
 
 
 def log_out(request):
 	logout(request)
 	return render(request,'log_out.html')
 
-## Please fill in this information to send email from the following email addresse (We only support gmail now)
-#fromaddr=Your email address, for example 'familyhost.worldwide@gmail.com'
-#username=Your user name, for example 'familyhost.worldwide'
-#password=Your password
 
 def send_email(toaddr,id):
 	text = "Hi!\nHow are you?\nHere is the link to activate your account:\nhttp://127.0.0.1:8000/register_activate/activation/?id=%s" %(id)
 	# Record the MIME types of both parts - text/plain and text/html.
 	part1 = MIMEText(text, 'plain')
-	#part2 = MIMEText(html, 'html')
 	msg = MIMEMultipart('alternative')
 	msg.attach(part1)
-	#msg.attach(part2)
 	subject="Activate your account at Family Host"
 	msg="""\From: %s\nTo: %s\nSubject: %s\n\n%s""" %(fromaddr,toaddr,subject,msg.as_string())
 	#Use gmail's smtp server to send email. However, you need to turn on the setting "lesssecureapps" following this link:
