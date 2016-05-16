@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container-fluid bg-grey">
+<div class="redirect text-center">
+	<h5>Do not have an accout? <a href="/register_activate/signup">Sign up</a> now!</h5>
+</div>
+</div>
+<div class="container-fluid text-center">
+<form method="post">
+	{% csrf_token %}
+	{{form.non_field_errors}}
+	<br>
+	<div>
+		<h5>Please use your user name or email to <strong>log in</strong></h5>
+	</div>
+	<div class="fieldWrapper">
+		{{form.username.errors}}
+		<label for="form.username.id_for_label">User Name </label><br>
+		{{form.username}}		
+	</div>
+	<div class="fieldWrapper">
+		{{form.email.errors}}
+		<label for="form.email.id_for_label">Or Email </label><br>
+		{{form.email}}
+	</div>
+	<div class="fieldWrapper">
+		{{form.password.errors}}
+		<br><label for="form.password.id_for_label">Password </label><br>
+		{{form.password}}
+	</div>
+	<br>
+	<input type="submit" value="Log in" class="btn btn-primary"/>
+</form>
+</div>
+{% endblock %}

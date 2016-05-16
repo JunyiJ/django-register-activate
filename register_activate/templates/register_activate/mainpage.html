@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container-fluid bg-grey">
+	{% if not user.username %}
+		 <p class="text-warning text-left">Hello there!</p>
+	{% else %}
+		 <h4 class="text-left">Welcome,{{user.username}}</h4>
+	{% endif %}
+	<form method="post" class="form-inline" align="right">
+		{% csrf_token %}
+		<input type="submit" class="btn btn-default" name="logout" value="logout"/>
+	</form>
+</div>
+<div class="container-fluid text-center">
+<h4>{{message}}</h4>
+
+<br><br>
+{% endblock %}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<html>
+	<head>
+		<title>Family Host</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<style>
+		.header{
+			background-color: #3399CC;
+			color: #fff;
+			padding: 80px 25px;
+		}
+		.bg-grey{
+			background-color: #f4f4f4;
+			padding: 10px 25px;
+		}
+		.footer{
+		  position: relative;
+		  margin-top: 0px; /* negative value of footer height */
+		  height: 0px;
+		  clear:both;
+		  padding-top:120px;
+		}
+
+		</style>
+	</head>
+	<body style="padding-bottom: 10px">
+		<div class="header text-center">		
+		<h1><strong>Website Name</strong></h1>
+		<br>
+			<h4>A description of your brilliant website</h4>
+		</div>
+		{% block content %}
+		{% endblock %}
+	<div class="footer">
+		<div class="row">
+			<div class="col-sm-4" style="background-color:#C8E6C9  ;padding-bottom:20px">
+				<div class="container">
+				<h4> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				Powered by Django</h4>
+				</div>
+			</div>
+			<div class="col-sm-4" style="background-color:#C8E6C9  ;padding-bottom:20px">
+				<div class="container">
+				<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;
+				</h4>
+				</div>
+			</div>
+			<div class="col-sm-4" style="background-color:#C8E6C9  ;padding-bottom:20px">
+			<div class="container">
+				<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				Donate :)</h4>
+				</div>
+			</div>
+		</div>
+	</div>
+	</body>
+</html>

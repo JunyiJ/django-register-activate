@@ -1,0 +1,4 @@
+include LICENSE.txt
+include README.rst
+recursive-include register_activate/templates *
+recursive-include docs *

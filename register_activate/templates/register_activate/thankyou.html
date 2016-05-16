@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container-fluid bg-grey text-center">
+	{% if user.username %}
+		Welcome, {{user.username}}!
+	{% else %}
+		Hello!
+	{% endif %}
+</div>
+<div class="container-fluid text-center">
+	<br><br>
+	<h4>An activation link has been sent to you by email, please check your mailbox to activate your account </h4>
+	<br>
+</div>
+
+
+
+{% endblock %}

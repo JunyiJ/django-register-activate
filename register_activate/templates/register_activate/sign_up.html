@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container-fluid bg-grey">
+<div class="redirect text-center">
+	Already have an account? <a href="/register_activate/signin/">Login<a>
+</div>
+</div>
+<div class="container text-center">
+<br><p>Create an account now</p>
+<form role="form" method="post">
+	{% csrf_token %}
+	{{form.non_field_errors}}
+	<br>
+	<div class="fieldWrapper">
+		{{form.username.errors}}
+		<label for="form.username.id_for_label">User Name: </label><br>
+		{{form.username}}
+	</div>
+	<div class="fieldWrapper">
+		{{form.password.errors}}
+		{{help_text|safe}}
+		<label for="form.password.id_for_label">Password: </label><br>
+		{{form.password}}
+	</div>
+	<div class="fieldWrapper">
+		{{form.verify_password.errors}}
+		<label for="form.verify_password.id_for_label">Verify your password: </label><br>
+		{{form.verify_password}}
+	</div>
+	<div class="fieldWrapper">
+		{{form.email.errors}}
+		<label for="form.email.id_for_label">Email: </label><br>
+		{{form.email}}
+	</div>
+	<br>
+		<input type="submit" value="Sign up" class="btn button-primary"/>
+
+</form>
+</div>
+{% endblock %}
