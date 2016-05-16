@@ -39,13 +39,15 @@ Configuration
 
 2. In your setting.py, get the absolut path the register_activate_dir (following BASE_DIR) like this::
     ``register_activate_dir=os.path.dirname(os.path.dirname(os.path.abspath(register_activate.__file__)))``
+    
 3. In your setting.py, add "register_activate" to your INSTALLED_APPS setting like this::
 
     ``INSTALLED_APPS = [
         ...
         'register_activate',
     ]``
-4. In your setting.py, add the template path of register_activate to TEMPLATES by updating 'DIRS' like this:
+    
+4. In your setting.py, add the template path of register_activate to TEMPLATES by updating 'DIRS' like this::
     ``TEMPLATES = [
         {
          'BACKEND': 'django.template.backends.django.DjangoTemplates',
