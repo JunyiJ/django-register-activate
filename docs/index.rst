@@ -66,7 +66,7 @@ Configuration
                 ],
             },
         },
-   ]
+      ]
 
 5. In your setting.py, add the AUTHENTICATION_BACKENDS setting like this::
 
@@ -84,7 +84,7 @@ Configuration
        ...
        url(r'^register_activate/',include('register_activate.urls')),
        url(r'^admin/', admin.site.urls),
-   ]
+      ]
    
 
 7. Run ``python manage.py migrate`` to create the models.
