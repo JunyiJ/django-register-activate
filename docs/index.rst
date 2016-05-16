@@ -6,12 +6,10 @@
 Welcome to register_activate's documentation!
 =============================================
 
-Contents:
-
 .. toctree::
    :maxdepth: 2
 
-Register_activate will provide a django app for user sign up, email 
+*Register_activate* is a simple, user-friendly django application for user sign up, email 
 account verification and activation, login and logout. It 
 is based on django' user model but have certain advantages
 over the django user model: 
@@ -38,7 +36,7 @@ The easiest way is to use pip install
 
 Install register_activate by running:
 
-    pip install register_activate
+    ``pip install register_activate``
 
 Contribute
 ----------
