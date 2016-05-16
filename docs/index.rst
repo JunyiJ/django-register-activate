@@ -28,7 +28,7 @@ Installation
 ------------
 Before installation, make sure that you have `Django <https://www.djangoproject.com/>`_- installed.
 
-The easiest way is to use `pip<https://pypi.python.org/pypi/pip>`_- install
+The easiest way is to use `pip <https://pypi.python.org/pypi/pip/>`_- install
 
 Install register_activate by running:
 
